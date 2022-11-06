@@ -8,6 +8,7 @@ public class Main
     {
 
 
+
         /* TASK :
          * Basit bir 5 ürünlü manav alisveris programi yaziniz.
          *
@@ -964,7 +965,6 @@ public class Main
             System.out.printf("%-5s %4skg %8s ",liste[i],dizikg[i],dizifiyat[i]);
             System.out.println();
         }*/
-
 
 
 //bir dizide gecen en cok gecen harfi yazdıran kod

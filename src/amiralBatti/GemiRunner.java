@@ -31,6 +31,8 @@ public class GemiRunner
         randomYatay = rnd.nextInt(0, 7);
         randomDikey = rnd.nextInt(0, 7);
         int ucakGemiUzunluk = 4;
+
+
         for (int i = 0; i < ucakGemiUzunluk; i++)
         {
             haritas[randomDikey][randomYatay] = 1;
@@ -42,8 +44,9 @@ public class GemiRunner
             {
                 randomDikey++;
             }
-
         }
+
+
         return haritas;
     }
 
