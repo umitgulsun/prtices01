@@ -13,39 +13,67 @@ public class GemiRunner
         int randomYatay = rnd.nextInt(0, 8);
         int randomDikey = rnd.nextInt(0, 8);
         int gemiUzunluk = 3;
+        boolean isilkCiksin = true;
 
-        for (int i = 0; i < gemiUzunluk; i++)
+        while (isilkCiksin)
         {
-            haritas[randomDikey][randomYatay] = 1;
-            if (gemiKonum == 0)
+            if (haritas[randomDikey][randomYatay] != 1)
             {
-                randomYatay++;
+                for (int i = 0; i < gemiUzunluk; i++)
+                {
+                    haritas[randomDikey][randomYatay] = 1;
+                    isilkCiksin=false;
+                    if (gemiKonum == 0)
+                    {
+                        randomYatay++;
+                    }
+                    else if (gemiKonum == 1)
+                    {
+                        randomDikey++;
+                    }
+                }
+            }else {
+                 gemiKonum = rnd.nextInt(0, 2);
+                 randomYatay = rnd.nextInt(0, 8);
+                 randomDikey = rnd.nextInt(0, 8);
+
             }
-            else if (gemiKonum == 1)
-            {
-                randomDikey++;
-            }
+
         }
 
         gemiKonum = rnd.nextInt(0, 2);
         randomYatay = rnd.nextInt(0, 7);
         randomDikey = rnd.nextInt(0, 7);
         int ucakGemiUzunluk = 4;
+        boolean isCiksin = true;
 
 
-        for (int i = 0; i < ucakGemiUzunluk; i++)
+        while (isCiksin)
         {
-            haritas[randomDikey][randomYatay] = 1;
-            if (gemiKonum == 0)
+            if ((haritas[randomDikey][randomYatay] != 1 && haritas[randomDikey][randomYatay + 1] != 1 && haritas[randomDikey][randomYatay + 2] != 1) ||
+                    (haritas[randomDikey][randomYatay] != 1 && haritas[randomDikey + 1][randomYatay] != 1 && haritas[randomDikey + 2][randomYatay] != 1))
             {
-                randomYatay++;
+                for (int i = 0; i < ucakGemiUzunluk; i++)
+                {
+                    isCiksin = false;
+                    haritas[randomDikey][randomYatay] = 1;
+                    if (gemiKonum == 0)
+                    {
+                        randomYatay++;
+                    }
+                    else if (gemiKonum == 1)
+                    {
+                        randomDikey++;
+                    }
+                }
             }
-            else if (gemiKonum == 1)
+            else
             {
-                randomDikey++;
+                gemiKonum = rnd.nextInt(0, 2);
+                randomYatay = rnd.nextInt(0, 7);
+                randomDikey = rnd.nextInt(0, 7);
             }
         }
-
 
         return haritas;
     }
