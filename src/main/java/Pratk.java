@@ -4,5 +4,6 @@ public class Pratk
     {
         System.out.println("aliii");
         System.out.println("hadi ekleyelim");
+        System.out.println("kesişen");
     }
 }
